@@ -1,0 +1,18 @@
+language: python  #设置语言
+
+python: 3.7  #设置相应的版本
+
+install:
+  - pip install -r requirements.txt #安装hexo及插件
+
+script:
+  - python houseRentingSpider.py #生成
+
+after_script:
+  - git add -A
+  - git commit -m "update"
+  - git push -f
+
+branches:
+  only:
+    - spider  #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
