@@ -82,12 +82,11 @@ class Main(object):
                               'https://www.douban.com/group/search?start=' + num_in_url +'&group=523355&cat=1013&sort=time&q=',
                               'https://www.douban.com/group/search?start=' + num_in_url +'&group=557646&cat=1013&sort=time&q=',
                               'https://www.douban.com/group/search?start=' + num_in_url +'&group=383972&cat=1013&sort=time&q=',
-                              'https://www.douban.com/group/search?start=' + num_in_url +'&group=283855&cat=1013&sort=time&q=',
                               'https://www.douban.com/group/search?start=' + num_in_url +'&group=76231&cat=1013&sort=time&q=',
                               'https://www.douban.com/group/search?start=' + num_in_url +'&group=196844&cat=1013&sort=time&q=',
                               'https://www.douban.com/group/search?start=' + num_in_url +'&group=259227&cat=1013&sort=time&q=']
                 return douban_url
-            douban_url_name = [u'上海租房', u'上海招聘，租房', u'上海租房(2)', u'上海合租族_魔都租房', u'上海租房@浦东租房', \
+            douban_url_name = [u'上海租房', u'上海招聘，租房', u'上海租房(2)', u'上海合租族_魔都租房', \
                                u'上海租房---房子是租来的，生活不是', u'上海租房@长宁租房/徐汇/静安租房', u'上海租房（不良中介勿扰）']
 
             def crawl(i, douban_url, keyword, douban_headers):
@@ -149,7 +148,7 @@ class Main(object):
                 else:
                     print 'request url error %s -status code: %s:' % (url_link, r.status_code)
                 time.sleep(self.config.douban_sleep_time)
-                
+
 
             print '爬虫开始运行...'
 
@@ -164,11 +163,11 @@ class Main(object):
                     keyword = search_list[j]
                     print 'start i->j %s -> %s %s' %(i, j, keyword)
                     print '>>>>>>>>>> Search %s  %s ...' % (douban_url_name[i].encode('utf-8'), keyword)
-                    
+
                     while spider.ok:
                         spider.ok = True
                         print 'i, j, page_number: ', i, j, page_number
-                        
+
                         douban_url = urlList(page_number)
                         crawl(i, douban_url, keyword, self.douban_headers)
                         page_number += 1
@@ -181,7 +180,7 @@ class Main(object):
 
             # export to html file
             print '爬虫运行结束。开始写入结果文件'
-            
+
             file = open(result_file_name + '.html', 'wb')
             with file:
                 file.write('''<html>
