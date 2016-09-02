@@ -135,7 +135,7 @@ class Main(object):
                                         cursor.execute(
                                             'INSERT INTO rent(id, title, url, itemtime, crawtime, source, keyword, note) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?)',
                                             [title_text, link_text, Utils.getTimeFromStr(time_text),
-                                             datetime.datetime.now(), keyword,
+                                             datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S'), keyword,
                                              douban_url_name[i], reply_count])
                                         print 'add new data:', title_text, time_text, reply_count, link_text, keyword
                                     except sqlite3.Error, e:
