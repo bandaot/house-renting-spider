@@ -60,7 +60,7 @@ class Main(object):
 
     def run(self):
         #result_file_name = 'results/result_' + str(spider.file_time)
-        result_file_name = 'results/index.html'
+        result_file_name = 'results/index'
         try:
             print '打开数据库...'
             # creat database
@@ -217,7 +217,7 @@ class Main(object):
                         file.write('</td>')
                     file.write('</tr>')
                 file.write('</table>')
-                file.write('<script type="text/javascript" src="/lib/resultPage.js"></script>')
+                file.write('<script type="text/javascript" src="lib/resultPage.js"></script>')
                 file.write('</body></html>')
             cursor.close()
         except Exception, e:
