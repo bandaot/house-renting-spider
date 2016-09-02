@@ -59,7 +59,8 @@ class Main(object):
         }
 
     def run(self):
-        result_file_name = 'results/result_' + str(spider.file_time)
+        #result_file_name = 'results/result_' + str(spider.file_time)
+        result_file_name = 'results/index.html
         try:
             print '打开数据库...'
             # creat database
@@ -187,7 +188,7 @@ class Main(object):
                     <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                     <title>上海租房信息 | 豆瓣</title>
-                    <link rel="stylesheet" type="text/css" href="../lib/resultPage.css">
+                    <link rel="stylesheet" type="text/css" href="lib/resultPage.css">
                     </head>
                     <body>''')
                 file.write('<h1>上海租房信息 | </h1>')
@@ -216,7 +217,7 @@ class Main(object):
                         file.write('</td>')
                     file.write('</tr>')
                 file.write('</table>')
-                file.write('<script type="text/javascript" src="../lib/resultPage.js"></script>')
+                file.write('<script type="text/javascript" src="lib/resultPage.js"></script>')
                 file.write('</body></html>')
             cursor.close()
         except Exception, e:
