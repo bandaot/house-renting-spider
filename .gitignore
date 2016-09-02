@@ -1,3 +1,5 @@
 *.pyc
 results/index.html
 results/index.sqlite
+.idea/
+*.iml
