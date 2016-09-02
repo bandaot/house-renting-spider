@@ -187,7 +187,7 @@ class Main(object):
                 file.write('''<html>
                     <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-                    <title>上海租房信息 | ''' + str(spider.file_time) + '''</title>
+                    <title>上海租房信息 | ''' + datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S') + '''</title>
                     <link rel="stylesheet" type="text/css" href="lib/resultPage.css">
                     </head>
                     <body>''')
