@@ -1,6 +1,6 @@
 language: python  #设置语言
 
-python: 3.7  #设置相应的版本
+python: 2.7  #设置相应的版本
 
 install:
   - pip install -r requirements.txt #安装hexo及插件
