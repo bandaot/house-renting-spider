@@ -200,8 +200,11 @@ class Main(object):
                 file.write('<table>')
                 file.write(
                     '<tr><th>索引</th><th>标题</th><th>发帖时间</th><th>抓取时间</th><th>关键字</th><th>来源</th><th>回复数</th></tr>')
-
+                title = ''
                 for row in values:
+                    if row[1] == title:
+                        continue
+                    title = row[1]
                     file.writelines('<tr>')
                     for i in range(len(row)):
                         if i == 2:
