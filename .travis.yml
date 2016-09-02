@@ -16,6 +16,7 @@ after_script:
   - git add .
   - git commit -m "update"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master 
+  - git push --force --quiet "https://${CODING_TOKEN}@${CODING_REF}" master:master 
 
 branches:
   only:
@@ -24,3 +25,4 @@ branches:
 env:
   global:
     - GH_REF: github.com/bandaot/house-renting-spider.git #设置GH_REF，注意更改yourname
+    - CODING_REF: git.coding.net/bandaot/house-renting-spider.git
