@@ -191,7 +191,7 @@ class Main(object):
                     <link rel="stylesheet" type="text/css" href="lib/resultPage.css">
                     </head>
                     <body>''')
-                file.write('<h1>上海租房信息 | </h1>')
+                file.write('<h1>上海租房信息 | ''' + datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S') + '''</h1>')
                 file.write('''
                     <a href="https://www.douban.com/" target="_black">
                     <img src="https://img3.doubanio.com/f/shire/8977fa054324c4c7f565447b003ebf75e9b4f9c6/pics/nav/lg_main@2x.png" alt="豆瓣icon"/>
