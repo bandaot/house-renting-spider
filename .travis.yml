@@ -8,7 +8,7 @@ install:
 script:
   - python houseRentingSpider.py #生成
 
-after_script:
+after_success:
   - cd ./results
   - git init
   - git config user.name "bandaot"  #修改name

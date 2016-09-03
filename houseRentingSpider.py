@@ -192,11 +192,6 @@ class Main(object):
                     </head>
                     <body>''')
                 file.write('<h1>上海租房信息 | ' + datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S') + '</h1>')
-                file.write('''
-                    <a href="https://www.douban.com/" target="_black">
-                    <img src="https://img3.doubanio.com/f/shire/8977fa054324c4c7f565447b003ebf75e9b4f9c6/pics/nav/lg_main@2x.png" alt="豆瓣icon"/>
-                    </a>
-                    ''')
                 file.write('<table>')
                 file.write(
                     '<tr><th>索引</th><th>标题</th><th>发帖时间</th><th>抓取时间</th><th>关键字</th><th>来源</th><th>回复数</th></tr>')
