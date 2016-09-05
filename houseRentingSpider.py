@@ -17,7 +17,7 @@ import Config
 class Utils(object):
     @staticmethod
     def isInBalckList(blacklist, toSearch):
-        if !blacklist:
+        if blacklist == '':
             return False
         for item in blacklist:
             if toSearch.find(item) != -1:
