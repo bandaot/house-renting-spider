@@ -17,10 +17,10 @@ import Config
 class Utils(object):
     @staticmethod
     def isInBalckList(blacklist, toSearch):
-        if blacklist == '':
+        if len(blacklist) == 0:
             return False
         for item in blacklist:
-            if toSearch.find(item) != -1:
+            if toSearch.find(item.decode('utf-8')) != -1:
                 return True
         return False
 
@@ -43,8 +43,6 @@ class Utils(object):
 
 
 class Main(object):
-    douban_black_list=(u'搬家')
-
     def __init__(self, config):
         self.config = config
         self.douban_headers = {
@@ -116,8 +114,6 @@ class Main(object):
                                     # ignore items in blacklist
                                     if Utils.isInBalckList(custom_black_list, title_text):
                                         continue
-                                    if Utils.isInBalckList(self.douban_black_list, title_text):
-                                        continue
                                     time_text = td[1].get('title')
 
                                     if (page_number != 0) and (Utils.getTimeFromStr(time_text) < start_time):
@@ -142,6 +138,7 @@ class Main(object):
                                         print 'data exists:', title_text, link_text, e # 之前添加过了而URL（设置了唯一）一样会报错
                             except Exception, e:
                                 print 'error match table:', e
+                                raise
                     except Exception, e:
                         print 'error match paginator:', e
                         spider.ok = False
