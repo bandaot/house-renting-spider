@@ -173,7 +173,7 @@ class Main(object):
             cursor.close()
 
             cursor = conn.cursor()
-            cursor.execute('SELECT * FROM rent ORDER BY source DESC, itemtime DESC ,crawtime DESC')
+            cursor.execute('SELECT * FROM rent ORDER BY itemtime DESC ,crawtime DESC')
             values = cursor.fetchall()
 
             # export to html file
