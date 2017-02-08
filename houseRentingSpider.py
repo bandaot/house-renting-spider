@@ -38,7 +38,7 @@ class Utils(object):
             # date.replace(year, month, day)：生成一个新的日期对象
             return date.replace(year=date_today.year, month=date_today.month, day=date_today.day)
         else:
-            return (datetime.date.now() - datetime.timedelta(days=7)).date()
+            return (datetime.datetime.now() - datetime.timedelta(days=7)).date()
 
 
 
